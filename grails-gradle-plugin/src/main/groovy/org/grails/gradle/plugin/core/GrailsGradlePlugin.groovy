@@ -178,7 +178,7 @@ class GrailsGradlePlugin extends GroovyPlugin {
         String gormVersion
 
         if(hasGormVersion) {
-            gormVersion = project.properties['gormVersion']
+            gormVersion = project.properties['gormVersion'] as String
             isGorm61 = GrailsVersionUtils.supportsAtLeastVersion(gormVersion, "6.1.0")
         }
 
