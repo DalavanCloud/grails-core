@@ -334,11 +334,8 @@ subprojects { project ->
                     from components.java
 
                     afterEvaluate {
-                        sourcesJar.classifier "sources"
-                        artifact sourcesJar
-
-                        javadocJar.classifier = "javadoc"
-                        artifact javadocJar
+                        artifact source: sourcesJar, classifier: "sources"
+                        artifact source: javadocJar, classifier: "javadoc"
                     }
                     pom.withXml {
                         def xml = asNode()
